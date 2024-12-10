@@ -40,4 +40,5 @@ jobs:
     - name: Run Unit and Integration Tests
       run: mvn test --file pom.xml
 
-
+    - name: Run JaCoCo Code Coverage
+      run: mvn jacoco:report --file pom.xml
