@@ -16,9 +16,9 @@ jobs:
       postgres:
         image: postgres:13  # Utilisez l'image officielle PostgreSQL 13
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: task_manager
+          POSTGRES_USER: ${{ secrets.user }}
+          POSTGRES_PASSWORD: ${{ secrets.password }}
+          POSTGRES_DB: ${{ secrets.name }}
         ports:
           - 5432:5432
         options: --health-cmd="pg_isready -U postgres" --health-interval=10s --health-timeout=5s --health-retries=5
